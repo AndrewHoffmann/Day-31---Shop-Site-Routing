@@ -1,0 +1,7 @@
+<!-- Item List (Ships) -->
+
+<div class="ship" ng-repeat="ship in vm.ships">
+	<h1>{{ship.name}}</h1>
+	<img src="{{ship.img}}">
+    <a class="btn btn-primary" ui-sref='singleShip({id:ship.id})'>Ship Details</a>
+</div>

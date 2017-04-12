@@ -5,10 +5,10 @@
     .module('routing', ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider,$locationProvider){
 
-    	$locationProvider.html5Mode({
-		  enabled: true,
-		  requireBase: false
-		});
+    // 	$locationProvider.html5Mode({
+		//   enabled: true,
+		//   requireBase: false
+		// });
 
     	$stateProvider
 	    .state('home', {
@@ -19,37 +19,42 @@
 		        controller: 'MainController',
 		        controllerAs: 'vm'
 		      },
-		      'sidebar': {
-		        templateUrl: '../partials/sidebar.html',
-		      }
 		   }
 	    })
-	    .state('singleBlog', {
-	      url: '/blogs/:id',
+
+	    .state('singleShip', {
+	      url: '/ship/:id',
 	      views: {
 		      'content': {
-		        templateUrl: '../partials/singleBlog.html',
-		        controller: 'SingleBlogController',
+		        templateUrl: '../partials/singleShip.html',
+		        controller: 'SingleShipController',
 		        controllerAs: 'vm'
 		      },
-		      'sidebar': {
-		        templateUrl: '../partials/singleBarSidebar.html',
-		      }
 		   }
 	    })
-	    .state('blogs', {
-	      url: '/blogs',
+
+	    .state('shipType', {
+	      url: '/shipType',
 	      views: {
 		      'content': {
-		        templateUrl: '../partials/blogs.html',
-		        controller: 'BlogController',
+		        templateUrl: '../partials/shipType.html',
+		        controller: 'ShipController',
 		        controllerAs: 'vm'
 		      },
-		      'sidebar': {
-		        templateUrl: '../partials/singleBarSidebar.html',
-		      }
 		   }
 	    })
+
+			.state('ships', {
+	      url: '/ships',
+	      views: {
+		      'content': {
+		        templateUrl: '../partials/ships.html',
+		        controller: 'ShipController',
+		        controllerAs: 'vm'
+		      },
+		   }
+	    })
+
 	    .state('login', {
 	      url: '/login',
 	      views: {
@@ -58,12 +63,18 @@
 		        controller: 'LoginController',
 		        controllerAs: 'vm'
 		      },
-		      'sidebar': {
-		        templateUrl: '../partials/singleBarSidebar.html',
-		      }
+		   }
+	    })
+			
+			.state('salesTeam', {
+	      url: '/salesTeam',
+	      views: {
+		      'content': {
+		        templateUrl: '../partials/salesTeam.html'
+		      },
 		   }
 	    });
-
+			
     });
         
 })();
